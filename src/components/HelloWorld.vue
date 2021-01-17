@@ -7,13 +7,13 @@
     <button v-on:click="decrementToMaxOfZero()">Decrement</button>
     <button v-on:click="count = 0">Reset</button>
     <ul id="example-2">
-      <li v-for="(todo, index) in todos" v-bind:key="todo.text" v-on:click="removeTodo(index)">
-        {{ index + 1 }} - {{ todo.text }}
+      <li v-for="(todo, idx) in todos" :key="todo.text" v-on:click="removeTodo(idx)">
+        {{ idx + 1 }} - {{ todo.text }}
       </li>
     </ul>
     <input v-model="message" placeholder="edit me" />
     <p>Message is: {{ message }}</p>
-    <button v-on:click="addTodo()">Add Todo</button>
+    <button v-on:click="addTodo">Add Todo</button>
   </div>
 </template>
 
