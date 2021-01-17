@@ -7,7 +7,7 @@
     <button v-on:click="decrementToMaxOfZero()">Decrement</button>
     <button v-on:click="count = 0">Reset</button>
     <ul id="example-2">
-      <li v-for="(todo, index) in todos" v-bind:key="todo.text">
+      <li v-for="(todo, index) in todos" v-bind:key="todo.text" v-on:click="removeTodo(index)">
         {{ index + 1 }} - {{ todo.text }}
       </li>
     </ul>
@@ -49,6 +49,9 @@ export default {
       });
       this.message = "";
     },
+    removeTodo(chosenIdx) {
+      this.todos = this.todos.filter((_, currentIdx) => currentIdx !== chosenIdx)
+    }
   },
 };
 </script>
